@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .image {
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                width: 0px;
+                height: 0px;
+            }
+        </style>
+
+        <script>
+            var currentNumber;
+
+            function shrinkFirstImage() {
+                const firstNumber = Math.floor(Math.random()*4) + 1; //random from 1 to 4
+                currentNumber = firstNumber; //store first number to current number
+                const firstImgId = "img" + firstNumber;
+
+                //display first image
+                $("#" + firstImgId).css({"width": "200px", "height": "200px" });   
+
+                //shrink first image in 6 seconds
+                $("#" + firstImgId).animate({ 
+                        width: "0px",
+                        height: "0px",
+                    }, 6000, function() {
+                        expandNewImage();
+                    });
+            }
+
+            function expandNewImage() {
+                let number = currentNumber; //random from 1 to 4
+                while (number == currentNumber) {
+                    number = Math.floor(Math.random()*4) + 1;
+                }
+
+                currentNumber = number;
+                imgId = "img" + currentNumber;
+
+                //expanding image in 3 seconds
+                $("#" + imgId).animate({ 
+                        width: "200px",
+                        height: "200px",
+                    }, 3000, function() {
+                        shrinkCurrentImage();
+                    });
+            }
+
+            function shrinkCurrentImage() {
+                imgId = "img" + currentNumber;
+
+                //shrink image in 3 seconds
+                $("#" + imgId).animate({ 
+                        width: "0px",
+                        height: "0px",
+                    }, 3000, function() {
+                        expandNewImage();
+                    });
+            }
+
+            $(document).ready(function() {
+                shrinkFirstImage();
+            });
+        </script>
+    </head>
+
+    <body>
+        <img src="images/dice1.png" id="img1" class="image"  />
+        <img src="images/dice2.png" id="img2" class="image"  />
+        <img src="images/dice3.png" id="img3" class="image"  />
+        <img src="images/dice4.png" id="img4" class="image"  />
+    </body>
+</html>
