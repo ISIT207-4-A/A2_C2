@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Part2-2</title>
+    <script>
+        $(document).ready(function(){
+          $("#hide").click(function(){
+            $("p.intro").hide();
+          });
+
+          $("#show").click(function(){
+            $("p.intro").show();
+          });
+
+          //fill table
+          $("#fill").click(function(){
+              let value = $("#text").val();
+              $("#table1 td").text(value);
+              $("#table1 th").text(value);
+          });
+
+          //append row
+          $("#append").click(function(){
+              $("#table2").append('<tr><td></td><td></td><td></td></tr>');
+          });
+          //remove row
+          $("#remove").click(function(){
+              $("#table2 tr:last").remove();
+          });
+
+          //toggle row color
+          var even = true;
+          $("#toggle").click(function(){
+              if(even){
+                $("#table3 tr:even").css("background-color","yellow");
+                $("#table3 tr:odd").css("background-color","white");
+                even = false;
+              }else{
+                $("#table3 tr:odd").css("background-color","yellow");
+                $("#table3 tr:even").css("background-color","white");
+                even = true;
+              }
+          });
+
+
+          //change image
+          $("#changeImage").click(function(){
+            let link = $("#imageLink").val();
+            $("#image1").attr('src', link);
+          });
+        });
+    </script>
+
+    <!-- css -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>2.2</h1>
+
+    <!-- hide and show -->
+    <h1>------------------------------------------------</h1>
+    <div style="height: 150px; width: 500px;">
+        
+
+    <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error porro nihil voluptatibus? Beatae sapiente similique exercitationem animi, earum libero, eaque illum facilis at rem minus optio pariatur quasi unde?</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    </div>
+
+    <h1>------------------------------------------------</h1>
+    <div style="height: 150px; width: 500px;">
+        <label for="value">Enter value to fill table</label><br>
+        <input type="text" id="text">
+        <button id="fill">Fill table</button>
+        <br><br>
+
+        <table id="table1">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+        </table>
+    </div>
+    <!-- add remove row -->
+    <h1>------------------------------------------------</h1>
+    <div style="height: 150px; width: 500px;">
+      <button id="append">Add row</button>
+      <button id="remove">Remove row</button>
+      <br><br>
+
+      <table id="table2">
+          <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+      </table>
+  </div>
+  <!-- toggle row color -->
+  <h1>------------------------------------------------</h1>
+  <div style="height: 150px; width: 500px;">
+    <button id="toggle">Toggle row color</button>
+    <table id="table3">
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+  </table>
+  </div>
+  <!-- change image using link -->
+  <h1>------------------------------------------------</h1>
+  <div style="height: 150px; width: 500px;">
+    <label for="value">Enter online image link</label><br>
+    <input type="text" id="imageLink">
+    <button id="changeImage">Change Image</button><br><br>
+    <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2019/07/the-essential-guide-to-using-images-legally-online-760x400.png" alt="image" id="image1">
+  </div>
+</body>
+</html>
