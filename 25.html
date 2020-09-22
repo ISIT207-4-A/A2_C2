@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+  <script>
+
+        $(document).ready(function () {
+
+            $.get('https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ca370d51a054836007519a00ff4ce59e&photo_id=%22thor%22&format=json&nojsoncallback=1', function (data) {
+
+                var items = [];
+                items = data.sizes.size;
+                console.log(items);
+                var el = $.map(items, function (val, i) {
+
+                    return "<img src =" + val.source + ">" + "</img>";
+
+                });
+                $(".element").html(el.join(""));
+            });
+    
+        });
+  </script>  
+  <style>
+    label {
+        display: inline-block;
+        width: 5em;
+    }
+</style>      
+</head>
+<body>
+  <h1>Images from flicker</h1>
+
+    <div class="element"></div>
+</body>
+
+</html>    
