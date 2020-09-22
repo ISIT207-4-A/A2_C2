@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="2-2.js"></script>
+    <link rel="stylesheet" href="2-2.css">
+    <title>Part 2-2</title>
+ 
+</head>
+<body>
+    <h1>2.2</h1>
+    
+    <h2>jQuery Effect</h2>
+
+    <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'hideJQ')">hide() & show()</button>
+    <button class="tablinks" onclick="openTab(event, 'animateJQ')">animate()</button>
+    <button class="tablinks" onclick="openTab(event, 'fadeJQ')">delay() & fadeToggle()</button>
+    <button class="tablinks" onclick="openTab(event, 'finishJQ')">stop() & finish()</button>
+    <button class="tablinks" onclick="openTab(event, 'slideJQ')">slideToggle()</button>
+    </div>
+
+    <div id="hideJQ" class="tabcontent">
+    <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error porro nihil voluptatibus? Beatae sapiente similique exercitationem animi, earum libero, eaque illum facilis at rem minus optio pariatur quasi unde?</p>
+
+    <button class="button" id="hide">Hide</button>
+    <button class="button" id="show">Show</button>
+    </div>
+    
+    <div id="animateJQ" class="tabcontent">
+        Let's feed Mario mushrooms:
+            <img style="height:25px;" id="bigger" src="https://vignette.wikia.nocookie.net/nintendo/images/5/5b/Mushroom1.jpg/revision/latest/scale-to-width-down/100?cb=20111104224030&path-prefix=en">
+            <img style="height:25px;" id="smaller" src="https://vignette.wikia.nocookie.net/nintendo/images/5/55/Mini_Mushroom.jpg/revision/latest/scale-to-width-down/96?cb=20110313000924&path-prefix=en">
+        <br />
+        
+        <img style="height: 200px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/MarioNSMBUDeluxe.png/220px-MarioNSMBUDeluxe.png" id="mario">
+    </div>
+    
+    <div id="fadeJQ" class="tabcontent">
+        <button class="button" id="hideseek">Hide and Seek</button><br />
+        <img style="height: 100px;" id="character1" src="https://images.squarespace-cdn.com/content/v1/56db6a92cf80a1b2c9a45955/1530391161288-14K5I2Z1D4AQKNP8MCXF/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmrMDYraMJMCQwFxTSOIP7LpSBEQpA-g5k6VTjWbSuadHJq0dp98hg5AZvIaPb3DoM/Mr-Egg.png">
+        <img style="height: 100px;" id="character2" src="https://lh3.googleusercontent.com/proxy/2HSSqqJuGGfDXkuaerUUfXcRjfKqB3QlZdlAx5T2ByCGq_winu_tw4yOl0WSYhLEpuqTsxmERCJHH63fNAsvBd4LsI5CBTHo6Mjl96PrIUOgyKig0xaLQg">
+    
+        <br />
+        <img style="height: 300px;" src="https://www.pngkit.com/png/full/7-73342_building-brick-wall-with-bricks-house.png">
+   <img style="height: 300px;" id="character3" src="https://static.wikia.nocookie.net/kingdomhearts/images/a/ae/Alice_KHREC.png/revision/latest?cb=20140609165151">
+    </div>
+    
+    <div id="finishJQ" class="tabcontent">
+        <button class="button" id="startWater">Watering...</button>
+        <button class="button" id="stopWater">Stop watering</button>
+        <button class="button" id="finishWater">Pouring out all the water!</button>
+        <table style="border-style:hidden; border:0px;">
+            <tr style="border-style:hidden; border:0px;"><td style="border-style:hidden; border:0px;">
+                    <p id="percent" style="text-align:center;">100%</p>
+            <div style="border:3px solid blue;margin:10px;width:50px;height: 300px;">
+            <div id="waterBar" style="background:turquoise;height:300px;width:50px;"></div>
+            </div>
+                    </td>
+                <td style="border-style:hidden; border:0px; width: 500px;">
+            <img style="height: 200px;" src="https://vignette.wikia.nocookie.net/animalcrossing/images/7/72/Animal-Crossing-New-Horizons_Characters-Watering.png/revision/latest?cb=20200224201639">
+                </td></tr>
+        </table>    
+    </div>
+    
+    <div id="slideJQ" class="tabcontent">
+        <button class="button" id="rolling">Rolling...</button><br />
+        <div id="curtain">
+            
+           <img src="https://10besthomedecor.com/wp-content/uploads/2018/08/Arlo-Blinds-Faux-Wood-Horizontal-Blinds-300x299.png">
+   
+        </div>
+     </div>
+    <h2>jQuery HTML</h2>
+    
+    <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'textJQ')">text()</button>
+    <button class="tablinks" onclick="openTab(event, 'appendJQ')">append() & remove()</button>
+    <button class="tablinks" onclick="openTab(event, 'cssJQ')">css()</button>
+    <button class="tablinks" onclick="openTab(event, 'attrJQ')">attr()</button>
+    </div>
+
+    <div id="textJQ" class="tabcontent">
+        <label for="value">Enter value to fill table</label><br>
+        <input type="text" id="text">
+        <button class="button" id="fill">Fill table</button>
+        <br><br>
+
+        <table id="table1">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+        </table>
+    </div>
+
+    
+    <div id="appendJQ" class="tabcontent">
+      <button class="button" id="append">Add row</button>
+      <button class="button" id="remove">Remove row</button>
+      <br><br>
+
+      <table id="table2">
+          <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+      </table>
+    </div>
+
+    
+  <div id="cssJQ" class="tabcontent">
+    <button class="button" id="toggle">Toggle row color</button>
+    <table id="table3">
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+  </table>
+  </div>
+
+    
+  <div id="attrJQ" class="tabcontent">
+    <label for="value">Enter online image link</label><br>
+    <input type="text" id="imageLink">
+    <button class="button" id="changeImage">Change Image</button><br><br>
+    <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2019/07/the-essential-guide-to-using-images-legally-online-760x400.png" alt="image" id="image1">
+  </div>
+    
+    
+    
+</body>
+</html>
