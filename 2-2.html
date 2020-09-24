@@ -15,15 +15,18 @@
     <h2>jQuery Effect</h2>
 
     <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'hideJQ')">hide() & show()</button>
+    <button class="tablinks" onclick="openTab(event, 'hideJQ')">hide(), show() & callback</button>
     <button class="tablinks" onclick="openTab(event, 'animateJQ')">animate()</button>
     <button class="tablinks" onclick="openTab(event, 'fadeJQ')">delay() & fadeToggle()</button>
     <button class="tablinks" onclick="openTab(event, 'finishJQ')">stop() & finish()</button>
     <button class="tablinks" onclick="openTab(event, 'slideJQ')">slideToggle()</button>
+    <button class="tablinks" onclick="openTab(event, 'queueJQ')">queue() & clearQueue()</button>
     </div>
 
     <div id="hideJQ" class="tabcontent">
-    <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error porro nihil voluptatibus? Beatae sapiente similique exercitationem animi, earum libero, eaque illum facilis at rem minus optio pariatur quasi unde?</p>
+    <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam error porro nihil voluptatibus? Beatae sapiente similique exercitationem animi, earum libero, eaque illum facilis at rem minus optio pariatur quasi unde?
+    <br />
+    <img style="width: 500px;" src="https://i.ytimg.com/vi/U-C0I-Ks14M/maxresdefault.jpg"></p>
 
     <button class="button" id="hide">Hide</button>
     <button class="button" id="show">Show</button>
@@ -41,7 +44,7 @@
     <div id="fadeJQ" class="tabcontent">
         <button class="button" id="hideseek">Hide and Seek</button><br />
         <img style="height: 100px;" id="character1" src="https://images.squarespace-cdn.com/content/v1/56db6a92cf80a1b2c9a45955/1530391161288-14K5I2Z1D4AQKNP8MCXF/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmrMDYraMJMCQwFxTSOIP7LpSBEQpA-g5k6VTjWbSuadHJq0dp98hg5AZvIaPb3DoM/Mr-Egg.png">
-        <img style="height: 100px;" id="character2" src="https://lh3.googleusercontent.com/proxy/2HSSqqJuGGfDXkuaerUUfXcRjfKqB3QlZdlAx5T2ByCGq_winu_tw4yOl0WSYhLEpuqTsxmERCJHH63fNAsvBd4LsI5CBTHo6Mjl96PrIUOgyKig0xaLQg">
+        <img style="height: 100px;" id="character2" src="https://lh3.googleusercontent.com/proxy/2Jk095z7wcp2S88fBh_xyCdRLcPtNBV2c74S4X76xzQ3kz0RWjlBZNGtxZW05y1_c-2VAtjPq-TtbjBO8fPhaXcsE3Jt-dIxffhlqQxM4qwWASHg9f07kg">
     
         <br />
         <img style="height: 300px;" src="https://www.pngkit.com/png/full/7-73342_building-brick-wall-with-bricks-house.png">
@@ -73,15 +76,32 @@
    
         </div>
      </div>
+    
+    <div id="queueJQ" class="tabcontent">
+        <p>The queue length is: <span id="numQueue"></span></p>
+        <button class="button" id="startQueue">Start Animation</button>
+        <button class="button" id="stopQueue">Stop Animation</button>
+        <br><br>
+        
+        <div id="boxQueue" style="background:#00BFFF; opacity: 0; height:50px;width:0px;"></div>
+        
+    </div>
+    
+    
     <h2>jQuery HTML</h2>
     
     <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'textJQ')">text()</button>
+    <button class="tablinks" onclick="openTab(event, 'textJQ')">get & set text()</button>
     <button class="tablinks" onclick="openTab(event, 'appendJQ')">append() & remove()</button>
+    <button class="tablinks" onclick="openTab(event, 'classJQ')">addClass()</button>
     <button class="tablinks" onclick="openTab(event, 'cssJQ')">css()</button>
-    <button class="tablinks" onclick="openTab(event, 'attrJQ')">attr()</button>
+    <button class="tablinks" onclick="openTab(event, 'attrJQ')">attr(), offset(), position() & Dimensions</button>
     </div>
 
+    <div id="classJQ" class="tabcontent">
+        <button id="changeCSS">Make it beautiful</button>
+    </div>
+    
     <div id="textJQ" class="tabcontent">
         <label for="value">Enter value to fill table</label><br>
         <input type="text" id="text">
@@ -181,7 +201,12 @@
   <div id="attrJQ" class="tabcontent">
     <label for="value">Enter online image link</label><br>
     <input type="text" id="imageLink">
-    <button class="button" id="changeImage">Change Image</button><br><br>
+    <button class="button" id="changeImage">Change Image</button><br>
+    <button class="button" id="offsetImg">The offset coordinates of image</button>
+    <button class="button" id="positionImg">The position of image</button>
+    <br>
+    <div id="sizeImg"></div>
+    <br>
     <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2019/07/the-essential-guide-to-using-images-legally-online-760x400.png" alt="image" id="image1">
   </div>
     
